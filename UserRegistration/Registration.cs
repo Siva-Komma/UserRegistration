@@ -145,5 +145,25 @@ namespace UserRegistration
                 }
             }
         }
+        public void EmailPatterns()
+        {
+            string Pattern = "^([a-z0-9]){3,}?([-,.,+][a-z0-9]{1,})*@([a-z0-9]){1,}[.][a-z]{2,}?([.][a-z]{2,})?$";
+            string[] Email = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com",
+                              "abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com","abc.1@yahoo.co",
+                              "abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com",
+                              "abc@%*.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"};
+
+            foreach (string input in Email)
+            {
+                if (Regex.IsMatch(input, Pattern))
+                {
+                    Console.WriteLine("{0} is valid Email", input);
+                }
+                else
+                {
+                    Console.WriteLine("{0} is Invalid Email", input);
+                }
+            }
+        }
     }
 }

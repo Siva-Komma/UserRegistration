@@ -60,5 +60,22 @@ namespace UserRegistration
                 }
             }
         }
+        public void MobileFormat()
+        {
+            string Pattern = "^[0-9]{2}[ ][1-9]{1,}[0-9]{9}$";
+            string[] Number  = {"91 9381656750","919381656750","91 0938165675","81 938165675" };
+
+            foreach (string input in Number)
+            {
+                if (Regex.IsMatch(input, Pattern))
+                {
+                    Console.WriteLine("{0} Valid Input", input);
+                }
+                else
+                {
+                    Console.WriteLine("{0} Invalid Input", input);
+                }
+            }
+        }
     }
 }

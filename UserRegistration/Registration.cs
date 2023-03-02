@@ -43,5 +43,22 @@ namespace UserRegistration
                 }
             }
         }
+        public void ValidEmail()
+        {
+            string Pattern = "^[a-zA-z]{3,}?([.][a-z0-9]{1,})*@[a-z]{2,}[.][a-z]{2,}?([.][a-z]{2,})?$";
+            string[] Email = {"abc.xyz@bl.co.in","Sivakomma@gmail.com","Komma123gmail.com","siva@.com"};
+
+            foreach (string input in Email)
+            {
+                if (Regex.IsMatch(input, Pattern))
+                {
+                    Console.WriteLine("{0} Valid Input", input);
+                }
+                else
+                {
+                    Console.WriteLine("{0} Invalid Input", input);
+                }
+            }
+        }
     }
 }

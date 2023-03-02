@@ -11,7 +11,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to User Registration");
-            Console.WriteLine("1.Validate FirstName\n2.Validate LastName");
+            Console.WriteLine("1.Validate FirstName\n2.Validate LastName\n3.Vali EmilId");
             Console.WriteLine("Choose your Option");
             int Option = Convert.ToInt32(Console.ReadLine());
             Registration registration = new Registration(); 
@@ -22,6 +22,9 @@ namespace UserRegistration
                     break;
                 case 2: 
                     registration.LastName(); 
+                    break;
+                case 3:
+                    registration.ValidEmail();
                     break;
             }
             Console.ReadLine();

@@ -11,7 +11,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to User Registration");
-            Console.WriteLine("1.Validate FirstName\n2.Validate LastName\n3.Vali EmilId\n4.MobileFormat\n5.PasswordRule1\n6.PasswordRule2\n7.PasswordRule3");
+            Console.WriteLine("1.Validate FirstName\n2.Validate LastName\n3.Vali EmilId\n4.MobileFormat\n5.PasswordRule1\n6.PasswordRule2\n7.PasswordRule3\n8.PasswordRul4");
             Console.WriteLine("Choose your Option");
             int Option = Convert.ToInt32(Console.ReadLine());
             Registration registration = new Registration(); 
@@ -37,6 +37,9 @@ namespace UserRegistration
                     break;
                 case 7:
                     registration.PasswordRule3();
+                    break;
+                case 8:
+                    registration.PasswordRule4();
                     break;
             }
             Console.ReadLine();

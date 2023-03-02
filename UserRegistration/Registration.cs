@@ -113,8 +113,25 @@ namespace UserRegistration
         }
         public void PasswordRule3()
         {
-            string Pattern = "^?[A-Za-z0-9]{1,}[A-Za-z0-9@,.#*$&]{7,}$";
-            string[] Password = { "Siv@329612", "Siva@12", "siva123@", "9siva@123" };
+            string Pattern = "^[A-Za-z0-9]{1,}[A-Za-z0-9@,.#*$&]{7,}$";
+            string[] Password = { "Siv@329612", "Siva@12", "siva123@", "Siva@123" };
+
+            foreach (string input in Password)
+            {
+                if (Regex.IsMatch(input, Pattern))
+                {
+                    Console.WriteLine("{0} Valid Input", input);
+                }
+                else
+                {
+                    Console.WriteLine("{0} Invalid Input", input);
+                }
+            }
+        }
+        public void PasswordRule4()
+        {
+            string Pattern = "^[A-Za-z0-9]{1,}[@#$&*]{1}[A-Za-z0-9@,.#*$&]{6,}$";
+            string[] Password = { "Siv@329612", "Siva@12", "siva123@"};
 
             foreach (string input in Password)
             {

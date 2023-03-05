@@ -20,5 +20,18 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("LastName")]
+        [DataRow(new string[] { "Komma", "Karthik", "HelloWorld" }, true)]
+        [DataRow(new string[] { "venky", "Hello World" }, false)]
+        public void LastNameTestCases(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.LastNameTestcase(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 }

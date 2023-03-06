@@ -85,6 +85,19 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Password Rule3 testcase")]
+        [DataRow(new string[] { "Siv@329612" }, true)]
+        [DataRow(new string[] { "Siva@12", "siva123@" ,"Siva@Jyothi"}, false)]
+        public void PasswordRule3AtLeast1Numeric(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.PasswordAtleastOneNumeric(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 
 }

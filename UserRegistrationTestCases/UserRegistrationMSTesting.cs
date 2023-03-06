@@ -93,6 +93,20 @@ namespace UserRegistrationTestCases
                 return false;
             }
         }
+        public bool PasswordAtleastOneNumeric(string input)
+        {
+            string Pattern = "^[A-Z]{1}[a-zA-Z$,@,#,&,*]{1,}[0-9]{1,}.{5,}$";
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid ", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", input);
+                return false;
+            }
+        }
     }
 
 }

@@ -98,7 +98,19 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Password Rule4 testcase")]
+        [DataRow(new string[] { "Siva@329612"}, true)]
+        [DataRow(new string[] { "siva@12", "Siva123@" }, false)]
+        public void PasswordRule4ExactlyOneSpecial(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.PasswordRule4ExactOneSpecialSymbol((s));
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
-
 }
 

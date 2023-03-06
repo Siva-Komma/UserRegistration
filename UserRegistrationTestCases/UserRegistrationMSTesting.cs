@@ -107,6 +107,20 @@ namespace UserRegistrationTestCases
                 return false;
             }
         }
+        public bool PasswordRule4ExactOneSpecialSymbol(string input)
+        {
+            string Pattern = "^[A-Z]{1,}[a-zA-Z0-9]{1,}[$,@,#,&,*]{1,}[0-9]{1,}.{4,}$";
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid ", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", input);
+                return false;
+            }
+        }
     }
-
 }
+ 

@@ -121,6 +121,21 @@ namespace UserRegistrationTestCases
                 return false;
             }
         }
+        public bool EmailPatterns(string input)
+        {
+            string Pattern = "^([a-z0-9]){3,}?([-,.,+][a-z0-9]{1,})*@([a-z0-9]){1,}[.][a-z]{2,}?([.][a-z]{2,})?$";
+         
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid Email", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid Email", input);
+                return false;   
+            }   
+        }
     }
 }
  

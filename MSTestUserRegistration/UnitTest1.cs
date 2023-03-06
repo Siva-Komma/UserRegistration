@@ -33,5 +33,18 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Email testcase")]
+        [DataRow(new string[] { "abc.xyz@bl.co.in", "Sivakomma@gmail.com" }, true)]
+        [DataRow(new string[] { "siva@.com", "Komma123gmail.com" }, false)]
+        public void UserEanil(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.EmailValidation(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 }

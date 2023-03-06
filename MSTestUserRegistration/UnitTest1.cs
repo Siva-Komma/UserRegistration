@@ -46,5 +46,20 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Mobile testcase")]
+        [DataRow(new string[] { "91 9381656750" }, true)]
+        [DataRow(new string[] { "919381656750", "91 0938165675", "81 938165675" }, false)]
+        public void UserPhoneNumber(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.MobileValidation(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
+
 }
+

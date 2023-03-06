@@ -51,6 +51,21 @@ namespace UserRegistrationTestCases
                 return false;
             }
         }
+        public bool MobileValidation(string input)
+        {
+            string Pattern = "^[0-9]{2}[ ][1-9]{1,}[0-9]{9}$";;
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid Mobile Number", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid Mobile Number", input);
+                return false;
+            }
+
+        }
     }
 
 }

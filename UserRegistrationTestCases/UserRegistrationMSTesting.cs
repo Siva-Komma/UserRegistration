@@ -64,7 +64,20 @@ namespace UserRegistrationTestCases
                 Console.WriteLine("{0} is Invalid Mobile Number", input);
                 return false;
             }
-
+        }
+        public bool PasswordMinimumlength(string input)
+        {
+            string Pattern = "^[A-Za-z0-9@,.#*$&]{8,}$";
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid ", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", input);
+                return false;
+            }
         }
     }
 

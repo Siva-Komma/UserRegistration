@@ -59,6 +59,19 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Password Rule1 testcase")]
+        [DataRow(new string[] { "Siv@329612", "siva@123" }, true)]
+        [DataRow(new string[] { "Siva@12", "siva123" }, false)]
+        public void PasswordRule1(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.PasswordMinimumlength(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 
 }

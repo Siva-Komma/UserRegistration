@@ -72,6 +72,19 @@ namespace MSTestUserRegistration
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [TestCategory("Password Rule2 testcase")]
+        [DataRow(new string[] { "Siva@329612", "Siva@123" }, true)]
+        [DataRow(new string[] { "Siva@12", "siva12","9Siva@123" }, false)]
+        public void PasswordRule2AtLeast1UpperCase(string[] arr, bool expected)
+        {
+            UserRegistrationMSTesting userDetails = new UserRegistrationMSTesting();
+            foreach (string s in arr)
+            {
+                bool actual = userDetails.PasswordAtleastOneUpperCaselength(s);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 
 }

@@ -79,6 +79,20 @@ namespace UserRegistrationTestCases
                 return false;
             }
         }
+        public bool PasswordAtleastOneUpperCaselength(string input)
+        {
+            string Pattern = "^[A-Z]{1}[A-Za-z0-9@,.#*$&]{7,}$";
+            if (Regex.IsMatch(input, Pattern))
+            {
+                Console.WriteLine("{0} is valid ", input);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", input);
+                return false;
+            }
+        }
     }
 
 }
